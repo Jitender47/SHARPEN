@@ -32,7 +32,7 @@ for i, imgpath in enumerate(imagepaths[:20]):
     bgrimg = cv2.resize(bgrimg, (300, 300), interpolation=cv2.INTER_CUBIC)
     
     # HIGH SHARPEN
-    kernel_sharp = np.array(([-2, -2, -2], [-2, 17, -2], [-2, -2, -2]), dtype='int') # High sharpening
+    kernel_sharp = np.array(([-2, -2, -2], [-2, 17, -2], [-2, -2, -2])) # High sharpening
     sbgrimg = cv2.filter2D(bgrimg, -1, kernel_sharp) # image sharpening
     sbgrimg = cv2.bilateralFilter(sbgrimg, 9, 100, 100) # Noise reduction
 
